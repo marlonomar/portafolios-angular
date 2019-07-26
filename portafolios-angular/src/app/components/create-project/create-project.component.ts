@@ -11,12 +11,23 @@ import { ServicesProyects } from '../../services/proyects.service';
 export class CreateProjectComponent implements OnInit {
 
   public myProyect :Proyect;
-  public status :string
+  public status :string;
+  public tituloPrincipal : String;
+  public mensajeFail : String;
+  public mensajeSuccess : String;
+  public tituloForm : String;
+  public sugerencias : String;
   constructor(
-    private _peticionesServices:ServicesProyects
+    private _peticionesServices:ServicesProyects,
+    
   )
   { 
     this.myProyect = new Proyect ('','','','','','');
+    this.tituloPrincipal = 'Crear un nuevo proyecto';
+    this.mensajeSuccess = 'El proyecto {{myProyect.name}} se a guardado correctamente ';
+    this.mensajeFail = 'El proyecto no pudo ser guardado';
+    this.tituloForm ='Registrar';
+    this.sugerencias = 'los datos sugeridos son necesarios para enviar';
   }
 
   ngOnInit() {
