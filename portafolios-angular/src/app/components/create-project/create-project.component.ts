@@ -17,7 +17,6 @@ export class CreateProjectComponent implements OnInit {
   )
   { 
     this.myProyect = new Proyect ('','','','','','');
-    
   }
 
   ngOnInit() {
