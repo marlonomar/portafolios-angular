@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-md-12 col-lg-12">
+            <div class="nav">
+                <ul>
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/sobreMi']" ><img src="https://static1.squarespace.com/static/56fae06f37013bde7d6155fd/572231c022482eb0d498d974/58457c21cd0f6835d6708af2/1480949118140/MG+Logo+copy.png" alt="" width="43px"></a></li>
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/sobreMi']">Sobre Mi</a></li>
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/proyectos']" >Proyectos</a></li>
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/crearProyecto']" >Crear Proyecto</a></li>
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/contacto']">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <section class="main">
+            <div class="info">
+                <router-outlet></router-outlet>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>
+            proyecto MEAN stack (MONGODB , EXPRESS , ANGULAR Y NODE JS) &copy;
+        </p>
+    </footer>
+    
+</div>
+

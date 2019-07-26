@@ -1,0 +1,29 @@
+.ms-about{
+    width: 100%;
+    padding: 80px;
+    text-align: center;
+    .membrete{
+        margin-bottom: 50px;
+        h1{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 50px;
+        }
+        h2{
+            color: #5a5a5a;
+        }
+        a{
+            color: #5a5a5a;
+        }
+    }
+    .about{
+        padding:50px;
+        text-align: justify;
+        h3{
+            font-weight: bold;
+        }
+        hr{
+            border-top: 2px  solid rgba(0,0,0,.1);;
+        }
+    }
+    
+}

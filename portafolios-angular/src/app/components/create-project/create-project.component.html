@@ -1,0 +1,47 @@
+<div class="ms-crearProyecto">
+    <div class="conatiner">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Crear un nuevo proyecto</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="formulario">
+                <div class="mensaje" *ngIf="status == 'success' ">
+                    <p>El proyecto {{myProyect.name}} se a guardado correctamente  <br/> <img src="https://png.pngtree.com/svg/20170401/52fae5909c.svg" alt=""> <br/> puedes <a [routerLink]="['/proyectos']" >verlo aqui</a></p>
+                </div>
+                <div class="mensaje" *ngIf="status == 'fail' ">
+                    <p>El proyecto no se ha guardado <br/> <img src="https://png.pngtree.com/svg/20161227/c10042249c.svg" alt=""> </p>
+                </div>
+                <h2>Registrar</h2>
+                <form  #formProyect="ngForm" (ngSubmit)="postSubmit(formProyect)">
+                        
+                        <input type="text" name="name"  placeholder="Nombre del Proyecto" #name="ngModel" [(ngModel)]="myProyect.name" required  class="form-control">
+                        <span *ngIf="name.touched && !name.valid" style="color: red">
+                            el nombre del proyecto es obligatorio
+                        </span>
+                        <input type="text" name="link"  placeholder="link del Proyecto" #link="ngModel" [(ngModel)]="myProyect.link" required  class="form-control">
+                        <span *ngIf="link.touched && !link.valid" style="color: red">
+                            el link del proyecto es obligatorio
+                        </span>
+                        <input type="text" name="tecnology"  placeholder="Que tecnologias uso ?" #tecnology="ngModel" [(ngModel)]="myProyect.tecnology" required class="form-control">
+                        <span *ngIf="tecnology.touched && !tecnology.valid" style="color: red">
+                            ingrese las tecnologias usadas
+                        </span>
+                        <input type="date" name="year" #year="ngModel" [(ngModel)]="myProyect.year" required class="form-control">
+                        <span *ngIf="year.touched && !year.valid" style="color: red">
+                            ingrese la fecha del proyecto
+                        </span>
+                        <textarea  placeholder="Descricion del Proyecto" name="description" class="form-control" #description="ngModel" [(ngModel)]="myProyect.description" required></textarea>
+                        <span *ngIf="description.touched && !description.valid" style="color: red">
+                            ingrese la descricion del proyecto
+                        </span>
+                        <label for="portada">Portada del proyecto:</label>
+                        <input name="file" type="file" class="form-control" name="portada">
+                        <input type="submit" value="enviar" class="btn btn-success" [disabled]="!formProyect.form.valid">
+                    </form>
+                <p>los datos sugeridos son necesarios para enviar</p>
+            </div> 
+        </div>
+    </div>
+</div>

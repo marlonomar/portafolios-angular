@@ -1,0 +1,45 @@
+<div class="ms-proyects">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titulo">
+                    <h1>Proyectos</h1>
+                </div>
+                <div class="gallery">
+                    <ul>
+                        <li  *ngFor="let proyecto of proyects">
+                            <div class="proyecto">
+                                <h4>{{proyecto.name}}</h4>
+                                <div class="image">
+                                    <img src="https://imagepng.org/wp-content/uploads/2018/08/alerta-2.png" alt="">
+                                </div>
+                                <div class="descripcion">
+                                    <ul>
+                                        <li>
+                                            <strong>Proyecto</strong>: {{proyecto.name}}
+                                        </li>
+                                        <li>
+                                           <strong>Id</strong> : {{proyecto._id}}
+                                        </li>
+                                        <li>
+                                            <strong>Tecnologias usadas </strong>: {{proyecto.tecnology}}
+                                        </li>
+                                        <li>
+                                            <strong>Creacion</strong>: {{proyecto.year}}
+                                        </li>
+                                        <li>
+                                            <strong>Link</strong>: <a href="{{proyecto.link}}" target="_blank">{{proyecto.name}}</a>
+                                        </li>
+                                        <li>
+                                            <strong>Descripcion</strong>: {{proyecto.description}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
