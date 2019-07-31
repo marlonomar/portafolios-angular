@@ -37,7 +37,7 @@
                             ingrese la descricion del proyecto
                         </span>
                         <label for="portada">Portada del proyecto:</label>
-                        <input name="file" type="file" class="form-control" name="portada">
+                        <input name="file" type="file" class="form-control" name="portada" (change)="fileChangeEvent($event)">
                         <input type="submit" value="enviar" class="btn btn-success" [disabled]="!formProyect.form.valid">
                     </form>
                 <p>{{sugerencias}}</p>

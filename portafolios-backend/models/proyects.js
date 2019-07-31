@@ -27,6 +27,10 @@ let newProyect = new Schema ({
     active:{
         type: Boolean,
         default :true,
+    },
+    img:{
+        type:String,
+        default:null
     }
 });
 

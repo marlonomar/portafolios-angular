@@ -5,6 +5,7 @@ export class Proyect {
         public description :string,
         public tecnology :string,
         public year :any,
-        public link : String
+        public link : String,
+        public img : String
     ){}
 }
