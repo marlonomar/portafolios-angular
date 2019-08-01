@@ -109,6 +109,27 @@ app.put('/proyects/:id',(req,res)=>{
  
 });
 
+app.get('/proyects/:id',(req,res)=>{
+    var id = req.params.id;
+    Proyect.find({_id : id}).exec((err,proyects)=>{
+        if(err){
+            return res.status(400).json({
+                success: false,
+                err
+            })
+        }
+        
+        res.setHeader('Access-Control-Allow-Origin', '[SCHEME]://[HOST]:[PORT_OPTIONAL]');
+
+        res.json({ 
+            proyects
+        })
+
+        
+   })
+    
+})
+
 app.get('/proyects',(req,res)=>{
     let desde = req.query.desde || 0;
     desde= Number(desde);

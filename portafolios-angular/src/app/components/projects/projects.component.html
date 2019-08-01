@@ -8,7 +8,7 @@
                 <div class="gallery">
                     <ul>
                         <li  *ngFor="let proyecto of proyects">
-                           <a [routerLink]="['/proyecto/',id]">
+                           <a [routerLink]="['/proyecto/',proyecto._id]">
                             <div class="proyecto">
                                 <h4>{{proyecto.name}}</h4>
                                 <div class="image">
