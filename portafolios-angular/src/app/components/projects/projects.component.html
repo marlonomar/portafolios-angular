@@ -8,6 +8,7 @@
                 <div class="gallery">
                     <ul>
                         <li  *ngFor="let proyecto of proyects">
+                           <a [routerLink]="['/proyecto/',id]">
                             <div class="proyecto">
                                 <h4>{{proyecto.name}}</h4>
                                 <div class="image">
@@ -16,19 +17,7 @@
                                 <div class="descripcion">
                                     <ul>
                                         <li>
-                                            <strong>Proyecto</strong>: {{proyecto.name}}
-                                        </li>
-                                        <li>
-                                           <strong>Id</strong> : {{proyecto._id}}
-                                        </li>
-                                        <li>
-                                            <strong>Tecnologias usadas </strong>: {{proyecto.tecnology}}
-                                        </li>
-                                        <li>
-                                            <strong>Creacion</strong>: {{proyecto.year}}
-                                        </li>
-                                        <li>
-                                            <strong>Link</strong>: <a href="{{proyecto.link}}" target="_blank">{{proyecto.name}}</a>
+                                            <strong>Proyecto</strong>: {{proyecto.name}} 
                                         </li>
                                         <li>
                                             <strong>Descripcion</strong>: {{proyecto.description}}
@@ -36,6 +25,7 @@
                                     </ul>
                                 </div>
                             </div>
+                           </a>
                         </li>
                     </ul>
                 </div>

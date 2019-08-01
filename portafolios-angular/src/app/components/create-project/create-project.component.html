@@ -8,7 +8,7 @@
         <div class="row">
             <div class="formulario">
                 <div class="mensaje" *ngIf="status == 'success' ">
-                    <p>{{mensajeSuccess}}<br/> <img src="https://png.pngtree.com/svg/20170401/52fae5909c.svg" alt=""> <br/> puedes <a [routerLink]="['/proyectos']" >verlo aqui</a></p>
+                    <p> {{myProyect.name}}  {{mensajeSuccess}}<br/> <img src="https://png.pngtree.com/svg/20170401/52fae5909c.svg" alt=""> <br/> puedes <a [routerLink]="['/proyecto/',id]" >verlo aqui</a></p>
                 </div>
                 <div class="mensaje" *ngIf="status == 'fail' ">
                     <p>{{mensajeFail}}<br/> <img src="https://png.pngtree.com/svg/20161227/c10042249c.svg" alt=""> </p>

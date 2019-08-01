@@ -13,6 +13,7 @@ import { ContactComponent } from './components/contact/contact.component';
 
 import { routing,appRoutingProviders} from './app.routing';
 import { ErrorComponent } from './components/error/error.component';
+import { ProyectDetailComponent} from './components/proyect-detail/proyect-detail.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ErrorComponent } from './components/error/error.component';
     CreateProjectComponent,
     ContactComponent,
     ErrorComponent,
+    ProyectDetailComponent
   ],
   imports: [
     BrowserModule,

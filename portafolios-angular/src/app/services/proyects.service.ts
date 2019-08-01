@@ -20,7 +20,6 @@ export class ServicesProyects{
     saveProyect(proyect :Proyect):Observable<any>{
         let params = JSON.stringify(proyect);
         let headers = new HttpHeaders().set('Content-Type','application/json');
-
         return this._http.post(this.url +'proyects',params ,{headers :headers});
     }
 }

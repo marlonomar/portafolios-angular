@@ -6,6 +6,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { CreateProjectComponent } from './components/create-project/create-project.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ErrorComponent } from './components/error/error.component';
+import { ProyectDetailComponent } from './components/proyect-detail/proyect-detail.component';
+
 
 const appRoutes : Routes = [
     {path:'',component:AboutComponent},
@@ -13,6 +15,7 @@ const appRoutes : Routes = [
     {path:'contacto',component:ContactComponent},
     {path:'crearProyecto',component:CreateProjectComponent},
     {path:'proyectos',component:ProjectsComponent},
+    {path:'proyecto/:id' , component :ProyectDetailComponent},
     {path:'**',component:ErrorComponent}
 ];
 

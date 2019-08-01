@@ -20,6 +20,7 @@ export class CreateProjectComponent implements OnInit {
   public tituloForm : String;
   public sugerencias : String;
   public fileToLoad : Array<File>;
+  public id : string;
 
   constructor(
     private _peticionesServices:ServicesProyects,
@@ -29,7 +30,7 @@ export class CreateProjectComponent implements OnInit {
   { 
     this.myProyect = new Proyect ('','','','','','','');
     this.tituloPrincipal = 'Crear un nuevo proyecto';
-    this.mensajeSuccess = 'El proyecto {{myProyect.name}} se a guardado correctamente ';
+    this.mensajeSuccess = 'se a guardado correctamente ';
     this.mensajeFail = 'El proyecto no pudo ser guardado';
     this.tituloForm ='Registrar';
     this.sugerencias = 'los datos sugeridos son necesarios para enviar';
@@ -47,6 +48,7 @@ export class CreateProjectComponent implements OnInit {
                          .then((result)=>{
                             console.log(result);
                             this.status = 'success';
+                            this.id = res.proyect._id;
                          });
     },
     err=>{
