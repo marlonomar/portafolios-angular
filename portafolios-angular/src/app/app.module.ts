@@ -14,6 +14,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { routing,appRoutingProviders} from './app.routing';
 import { ErrorComponent } from './components/error/error.component';
 import { ProyectDetailComponent} from './components/proyect-detail/proyect-detail.component';
+import { EditProyectComponent } from './components/edit-proyect/edit-proyect.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ProyectDetailComponent} from './components/proyect-detail/proyect-detai
     CreateProjectComponent,
     ContactComponent,
     ErrorComponent,
-    ProyectDetailComponent
+    ProyectDetailComponent,
+    EditProyectComponent
   ],
   imports: [
     BrowserModule,

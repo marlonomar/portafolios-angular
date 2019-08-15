@@ -15,25 +15,19 @@ export class CreateProjectComponent implements OnInit {
   public myProyect :Proyect;
   public status :string;
   public tituloPrincipal : String;
-  public mensajeFail : String;
-  public mensajeSuccess : String;
   public tituloForm : String;
-  public sugerencias : String;
   public fileToLoad : Array<File>;
   public id : string;
 
   constructor(
     private _peticionesServices:ServicesProyects,
     private _uploadService : UploadService
-    
   )
   { 
     this.myProyect = new Proyect ('','','','','','','');
     this.tituloPrincipal = 'Crear un nuevo proyecto';
-    this.mensajeSuccess = 'se a guardado correctamente ';
-    this.mensajeFail = 'El proyecto no pudo ser guardado';
     this.tituloForm ='Registrar';
-    this.sugerencias = 'los datos sugeridos son necesarios para enviar';
+
   }
 
   ngOnInit() {
@@ -60,7 +54,6 @@ export class CreateProjectComponent implements OnInit {
 
   fileChangeEvent(fileInput:any){
     this.fileToLoad = <Array<File>>fileInput.target.files;
-    console.log(this.fileToLoad)
   }
 
 }

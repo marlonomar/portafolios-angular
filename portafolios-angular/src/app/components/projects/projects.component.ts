@@ -29,7 +29,6 @@ export class ProjectsComponent implements OnInit {
         this._peticionesServices.getProyects().subscribe(res=>{
                 if(res.proyects){
                     this.proyects = res.proyects;
-                    console.log(this.proyects)
                 }   
             },
             req=>{

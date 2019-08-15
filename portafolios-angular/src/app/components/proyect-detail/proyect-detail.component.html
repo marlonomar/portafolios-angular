@@ -1,2 +1,47 @@
-
-<h1>{{proyect.name}}</h1>
+<div class="ms-proyecto">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titulo">
+                    <h1>{{proyect.name}}</h1>
+                    <p>Fecha de Creacion: {{proyect.year}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pagina">
+                    <iframe src="" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="descripcion">
+                    <h3>Descripcion del Proyecto</h3>
+                    <p>{{proyect.description}}</p>
+                    <hr>
+                    <h4>Tecnologias usadas:</h4>
+                    <h6>{{proyect.tecnology}}</h6>
+                    <hr>
+                    <h4>Link para Accesar al proyecto:</h4>
+                    <a href="{{link}}" target="_blank">{{link}}</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="config" *ngIf="comfirmar == false">
+                    <h2>Administrar Proyecto</h2>
+                    <button class="btn btn-danger" (click)="comfirmDelete(true)">Borrar</button>
+                    <button class="btn btn-success" [routerLink]="['/editarProyecto/',id]">Editar</button>
+                </div>
+                <div class="config" *ngIf="comfirmar == true">
+                    <h2>Elimar el proyecto definitivamente?</h2>
+                    <button class="btn btn-danger" (click)="deleteProyect(proyect._id)">eliminar</button>
+                    <button class="btn btn-success" (click)="comfirmDelete(false)">cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

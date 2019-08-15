@@ -10,18 +10,24 @@ import { Router , ActivatedRoute , Params } from '@angular/router';
   styleUrls: ['./proyect-detail.component.scss'],
   providers:[ServicesProyects]
 })
+
 export class ProyectDetailComponent implements OnInit {
   public url : String;
   public proyect : Proyect;
+  public link: String;
+  public id : String;
+  public comfirmar : Boolean;
   constructor(
     private _servicesProyects :ServicesProyects,
     private _router : Router,
     private _route : ActivatedRoute
   ) {
     this.url = apiGblobal.url;
+    this.comfirmar = false;
   }
 
   ngOnInit() {
+  
     this._route.params.subscribe(params=>{
         let id = params.id;
         this.getProyect(id);
@@ -32,12 +38,31 @@ export class ProyectDetailComponent implements OnInit {
     this._servicesProyects.getProyect(id).subscribe(
       response=>{
         this.proyect = response.proyects[0];
-        console.log(this.proyect.name)
+        this.link = response.proyects[0].link;
+        this.id = response.proyects[0]._id;
+        document.querySelector('iframe').setAttribute('src',this.link = response.proyects[0].link);
       },
       err=>{
         console.log(err)
       }
     )
+  }
+
+  deleteProyect(id){
+    this._servicesProyects.deleteProyect(id).subscribe(
+      response=>{
+          if(response){
+            this._router.navigate(['proyectos']);
+          }
+      },
+      err=>{
+        console.log(<any>err)
+      }
+    )
+  }
+
+  comfirmDelete(value){
+    this.comfirmar = value;
   }
 
 }

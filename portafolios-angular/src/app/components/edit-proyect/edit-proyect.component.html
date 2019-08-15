@@ -8,10 +8,10 @@
         <div class="row">
             <div class="formulario">
                 <div class="mensaje" *ngIf="status == 'success' ">
-                    <p> el proyecto {{myProyect.name}} se a guardado correctamente <br/> <img src="https://png.pngtree.com/svg/20170401/52fae5909c.svg" alt=""> <br/> puedes <a [routerLink]="['/proyecto/',id]" >verlo aqui</a></p>
+                    <p> el proyecto {{myProyect.name}} se a editado correctamente <br/> <img src="https://png.pngtree.com/svg/20170401/52fae5909c.svg" alt=""> <br/> puedes <a [routerLink]="['/proyecto/',id]" >verlo aqui</a></p>
                 </div>
                 <div class="mensaje" *ngIf="status == 'fail' ">
-                    <p>El proyecto no pudo ser guardado<br/> <img src="https://png.pngtree.com/svg/20161227/c10042249c.svg" alt=""> </p>
+                    <p>El proyecto no pudo ser editado<br/> <img src="https://png.pngtree.com/svg/20161227/c10042249c.svg" alt=""> </p>
                 </div>
                 <h2>{{tituloForm}}</h2>
                 <form  #formProyect="ngForm" (ngSubmit)="postSubmit(formProyect)">
@@ -37,6 +37,9 @@
                             ingrese la descricion del proyecto
                         </span>
                         <label for="portada">Portada del proyecto:</label>
+                        <div *ngIf="myProyect.img" style="padding-bottom:10px;">
+                            <img src="{{url+'imagen/'+myProyect.img}}" alt=""style="width:200px;padding:10px;border:2px solid #c6c6c6;">
+                        </div>
                         <input name="file" type="file" class="form-control" name="portada" (change)="fileChangeEvent($event)">
                         <input type="submit" value="enviar" class="btn btn-success" [disabled]="!formProyect.form.valid">
                     </form>
@@ -45,3 +48,4 @@
         </div>
     </div>
 </div>
+
