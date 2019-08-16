@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicesProyects } from '../../services/proyects.service';
 import { Proyect } from '../../models/proyects';
 import { apiGblobal } from '../../services/config-global';
+declare var $:any;
 
 @Component({
   selector: 'app-projects',
@@ -21,7 +22,7 @@ export class ProjectsComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getProyects()
+        this.getProyects();
     }
 
     getProyects(){
@@ -37,5 +38,4 @@ export class ProjectsComponent implements OnInit {
 
         )
     }
-
 }

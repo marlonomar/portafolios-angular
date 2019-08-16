@@ -3,7 +3,37 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="titulo">
-                    <h1>Contacto</h1>
+                   <h1>Contacto</h1>
+                </div>
+
+                <p #subTitulo >subTitulo : soy un subtitulo :) </p>
+                
+                <p appResaltador >soy un texto muy imporante que tiene que ser resaltado para no olvidar</p>
+
+                <div class="modificar" *ngIf="mostrar == false">
+                    <h2>Valores de la foto</h2>
+                    <input [(ngModel)]="url" type="text" placeholder="Url de la foto" class="form-control">
+                    <input [(ngModel)]="color" type="color" class="form-control" placeholder="Color">
+                    <input [(ngModel)]="ancho" type="number" class="form-control" placeholder="Width">
+                    <input [(ngModel)]="alto" type="number" class="form-control" placeholder="height">
+                    <input [(ngModel)]="radio" type="number" class="form-control" placeholder="Radio">
+                    <button class="btn btn-primary" (click)="mostrarFoto(true)">Cambiar</button>
+                </div>
+                <div class="externo" *ngIf="mostrar == true">
+                    <button class="btn btn-danger" (click)="mostrarFoto(false)">Reset</button>
+                    <app-colors [ancho]="ancho"
+                                [url]="url"
+                                [color]="color"
+                                [alto]="alto"
+                                [radio]="radio"
+                                (getAutor)="datosAutor($event)"
+                    ></app-colors>
+
+                    <h1>Datos del Autor</h1>
+                    <p>Nombre :{{datos.nombre}}</p>
+                    <p>Profesion : {{datos.profesion}}</p>
+                    <p>Edad : {{datos.edad}}</p>
+                    <p>Nacionalidad : {{datos.nacionalidad}}</p>
                 </div>
             </div>
         </div>

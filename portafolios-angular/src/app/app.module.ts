@@ -15,6 +15,8 @@ import { routing,appRoutingProviders} from './app.routing';
 import { ErrorComponent } from './components/error/error.component';
 import { ProyectDetailComponent} from './components/proyect-detail/proyect-detail.component';
 import { EditProyectComponent } from './components/edit-proyect/edit-proyect.component';
+import { ColorsComponent } from './components/colors/colors.component';
+import { ResaltadorDirective } from './directivas/resaltador.directive';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { EditProyectComponent } from './components/edit-proyect/edit-proyect.com
     ContactComponent,
     ErrorComponent,
     ProyectDetailComponent,
-    EditProyectComponent
+    EditProyectComponent,
+    ColorsComponent,
+    ResaltadorDirective
   ],
   imports: [
     BrowserModule,
